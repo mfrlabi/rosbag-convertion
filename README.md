@@ -14,7 +14,7 @@ ros1 rosbag to ros2 bag db3 format
 
 
 
-    2. after running funny_lidar_slam and mapping, we can save map in pcd format 
+2. after running funny_lidar_slam and mapping, we can save map in pcd format 
 
     # Save with default path (will save to funny_lidar_slam/data/map.pcd)
 
