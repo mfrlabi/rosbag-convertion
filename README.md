@@ -19,4 +19,4 @@ ros1 rosbag to ros2 bag db3 format
     # Save with default path (will save to funny_lidar_slam/data/map.pcd)
 
     
-    ros2 service call /save_map funny_lidar_slam/srv/SaveMap "{map_path: '', split_map: false}"
+     ros2 service call /save_map funny_lidar_slam/srv/SaveMap "{map_path: '', split_map: false}"
