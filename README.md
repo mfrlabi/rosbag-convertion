@@ -29,12 +29,13 @@ ros1 rosbag to ros2 bag db3 format
 Option A:  Publish the map as a ROS topic
 
 
-unitree@lb22:~$ 
+ unitree@lb22:~$ 
+
     ros2 run pcl_ros pcd_to_pointcloud   --ros-args -p file_name:=/home/unitree/funny_lidar_slam_ws/src/funny_lidar_slam/data/map.pcd   -r /cloud_pcd:=/saved_map
 
 
 
-Option B: With static transform (if frame mismatch)
+# Option B: With static transform (if frame mismatch)
 
 # Terminal 1: Publish the map
     ros2 run pcl_ros pcd_to_pointcloud \
