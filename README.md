@@ -35,7 +35,7 @@ Option A:  Publish the map as a ROS topic
 
 
 
-# Option B: With static transform (if frame mismatch)
+Option B: With static transform (if frame mismatch)
 
 # Terminal 1: Publish the map
     ros2 run pcl_ros pcd_to_pointcloud \
