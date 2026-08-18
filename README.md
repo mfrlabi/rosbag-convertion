@@ -1,4 +1,4 @@
-# rosbag-convertion
+# 1. rosbag-convertion
 
 
 ros1 rosbag to ros2 bag mcap format
@@ -15,7 +15,7 @@ ros1 rosbag to ros2 bag db3 format
 
 
  
-  # 2. Save with default path (will save to funny_lidar_slam/data/map.pcd)
+  # 3. Save with default path (will save to funny_lidar_slam/data/map.pcd)
  after running funny_lidar_slam and mapping, we can save map in pcd format
 
  unitree@lb22:~$ 
@@ -24,7 +24,7 @@ ros1 rosbag to ros2 bag db3 format
 
 
 
-# 3. Visualize the Map in RViz 
+# 4. Visualize the Map in RViz 
 
 Option A:  Publish the map as a ROS topic
 
@@ -37,35 +37,35 @@ Option A:  Publish the map as a ROS topic
 
 Option B: With static transform (if frame mismatch)
 
-# Terminal 1: Publish the map
+## Terminal 1: Publish the map
     ros2 run pcl_ros pcd_to_pointcloud \
       --ros-args -p file_name:=~/funny_lidar_slam_ws/src/funny_lidar_slam/data/map.pcd \
       -r /cloud_pcd:=/saved_map
 
-# Terminal 2: Publish static transform
+## Terminal 2: Publish static transform
     ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 map base_link
 
-# Visualize the map 
+## Visualize the map 
     rviz2
 
 
 
-## Localization
+# 4. Localization
 
 1.  unitree@lb22:~/mid360_downloaded$ ros2 bag play ~/mid360_downloaded/office_building2/office_building2.mcap   --clock   --loop   --rate 0.05   --read-ahead-queue-size 1
 
-    ros2 bag play ~/mid360_downloaded/office_building2/office_building2.mcap   --clock   --loop   --rate 0.05   --read-ahead-queue-size 1
+     ros2 bag play ~/mid360_downloaded/office_building2/office_building2.mcap   --clock   --loop   --rate 0.05        -read-ahead-queue-size 1
 
 
 2. unitree@lb22:~/funny_lidar_slam_ws$ ros2 run funny_lidar_slam funny_lidar_slam_node --ros-args   --params-file ~/funny_lidar_slam_ws/src/funny_lidar_slam/config/localization/config_mid_360.yaml   -p use_sim_time:=true
 
-    ros2 run funny_lidar_slam funny_lidar_slam_node --ros-args   --params-file ~/funny_lidar_slam_ws/src/funny_lidar_slam/config/localization/config_mid_360.yaml   -p use_sim_time:=true
+     ros2 run funny_lidar_slam funny_lidar_slam_node --ros-args   --params-file ~/funny_lidar_slam_ws/src/            funny_lidar_slam/config/localization/config_mid_360.yaml   -p use_sim_time:=true
 
 
 3. unitree@lb22:~$ ros2 run pcl_ros pcd_to_pointcloud   --ros-args -p file_name:=/home/unitree/funny_lidar_slam_ws/src/funny_lidar_slam/data/map.pcd   -r /cloud_pcd:=/saved_map
 
 
-     ros2 run pcl_ros pcd_to_pointcloud   --ros-args -p file_name:=/home/unitree/funny_lidar_slam_ws/src/funny_lidar_slam/data/map.pcd   -r /cloud_pcd:=/saved_map
+    ros2 run pcl_ros pcd_to_pointcloud   --ros-args -p file_name:=/home/unitree/funny_lidar_slam_ws/src/             funny_lidar_slam/data/map.pcd   -r /cloud_pcd:=/saved_map
 
 
 4.  unitree@lb22:~$ rviz2
@@ -75,12 +75,12 @@ Option B: With static transform (if frame mismatch)
 
 5. unitree@lb22:~$ ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 base_link livox_frame
 
-      ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 base_link livox_frame
+     ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 base_link livox_frame
 
 6.  unitree@lb22:~$ ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 map base_link
    
-      unitree@lb22:~$ ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 map base_link
-
+     unitree@lb22:~$ ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 map base_link
+ 
     
 
     
