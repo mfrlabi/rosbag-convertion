@@ -79,7 +79,7 @@ Option B: With static transform (if frame mismatch)
 
 ##  6.  unitree@lb22:~$ ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 map base_link
    
-     unitree@lb22:~$ ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 map base_link
+     ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 map base_link
  
     
 
