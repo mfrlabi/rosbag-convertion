@@ -44,3 +44,6 @@ Option B: With static transform (if frame mismatch)
 
 # Terminal 2: Publish static transform
     ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 map base_link
+
+# Visualize the map 
+    Rviz2
