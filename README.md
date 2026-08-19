@@ -52,34 +52,12 @@ Option B: With static transform (if frame mismatch)
 
 # 4. Localization
 
-## 1.  unitree@lb22:~/mid360_downloaded$ ros2 bag play ~/mid360_downloaded/office_building2/office_building2.mcap   --clock   --loop   --rate 0.05   --read-ahead-queue-size 1
+## 1.  unitree@lb22:~/funny_lidar_slam_ws$ ros2 launch funny_lidar_slam localization_mid_360.launch.py 
 
-     ros2 bag play ~/mid360_downloaded/office_building2/office_building2.mcap   --clock   --loop   --rate 0.05        -read-ahead-queue-size 1
+    ros2 launch funny_lidar_slam localization_mid_360.launch.py 
 
-
-##  2. unitree@lb22:~/funny_lidar_slam_ws$ ros2 run funny_lidar_slam funny_lidar_slam_node --ros-args   --params-file ~/funny_lidar_slam_ws/src/funny_lidar_slam/config/localization/config_mid_360.yaml   -p use_sim_time:=true
-
-     ros2 run funny_lidar_slam funny_lidar_slam_node --ros-args   --params-file ~/funny_lidar_slam_ws/src/            funny_lidar_slam/config/localization/config_mid_360.yaml   -p use_sim_time:=true
-
-
-##  3. unitree@lb22:~$ ros2 run pcl_ros pcd_to_pointcloud   --ros-args -p file_name:=/home/unitree/funny_lidar_slam_ws/src/funny_lidar_slam/data/map.pcd   -r /cloud_pcd:=/saved_map
-
-
-    ros2 run pcl_ros pcd_to_pointcloud   --ros-args -p file_name:=/home/unitree/funny_lidar_slam_ws/src/             funny_lidar_slam/data/map.pcd   -r /cloud_pcd:=/saved_map
-
-
-##  4.  unitree@lb22:~$ rviz2
    
-     rviz2 
-
-
-##  5. unitree@lb22:~$ ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 base_link livox_frame
-
-     ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 base_link livox_frame
-
-##  6.  unitree@lb22:~$ ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 map base_link
-   
-     ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 map base_link
+    
  
     
 
