@@ -18,9 +18,16 @@ ros1 rosbag to ros2 bag db3 format
   # 3. Save with default path (will save to funny_lidar_slam/data/map.pcd)
  after running funny_lidar_slam and mapping, we can save map in pcd format
 
+
+for ROS2
+
  unitree@lb22:~$ 
  
      ros2 service call /save_map funny_lidar_slam/srv/SaveMap "{map_path: '', split_map: false}"
+
+for ROS Noetic
+
+     rosservice call /funny_lidar_slam/save_map "{map_path: '/home/unitree/funny_lidar_slam_ws/src/funny_lidar_slam/data/map.pcd', split_map: false}"
 
 
 
